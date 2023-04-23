@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>IShop</title>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+
+    <script src="app.js"></script>
+
+    <script>
+      var shopTitle = "Магазин техники"
+      var productsArray = [
+        {title: 'HONOR X9a 6GB/128GB (изумрудный зеленый)', price: 850.00, URL: 'img/mobile.jpeg', count: 245, code: 1},
+        {title: 'Xiaomi Mi TV A2 43" (международная версия)', price: 1099.88, URL: 'img/TV.jpeg', count: 149, code: 2},
+        {title: 'Canyon CND-SGHS8A', price: 65.12, URL: 'img/headphones.jpeg', count: 470, code: 3},
+      ];
+
+      ReactDOM.render(
+        React.createElement(myComponent, {headerTitle: shopTitle, productList: productsArray}),
+        document.getElementById('container')
+      );
+
+    </script>
+
+  </body>
+</html>
