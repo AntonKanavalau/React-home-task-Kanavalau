@@ -29,7 +29,7 @@ var myComponent = React.createClass({
     );
 
     return React.DOM.div( null,
-      React.DOM.h1({className: 'headerTitle'}, this.headerTitle),
+      React.DOM.h1({className: 'headerTitle'}, this.props.headerTitle),
       React.DOM.table({className: 'myComponentBlock'}, React.DOM.tbody(null, products))
     );
   }
