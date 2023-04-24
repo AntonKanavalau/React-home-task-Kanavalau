@@ -29,7 +29,7 @@ var myComponent = React.createClass({
     );
 
     var tableHeader = this.props.tableHeader.map(char =>
-        React.DOM.th({className: 'headTitle'}, char),
+        React.DOM.th({key: char.code, className: 'headTitle'}, char.title),
     );
 
     return React.DOM.div(null,
