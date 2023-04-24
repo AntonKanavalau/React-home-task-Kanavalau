@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css" />
     <title>IShop</title>
   </head>
   <body>
@@ -12,6 +13,7 @@
 
     <script src="app.js"></script>
 
+
     <script>
       var shopTitle = "Магазин техники"
       var productsArray = [
@@ -20,8 +22,11 @@
         {title: 'Canyon CND-SGHS8A', price: 65.12, URL: 'img/headphones.jpeg', count: 470, code: 3},
       ];
 
+      var tableHeader = ['Модель', 'Стоимость', 'Изображение', 'Колличество'];
+
       ReactDOM.render(
-        React.createElement(myComponent, {headerTitle: shopTitle, productList: productsArray}),
+        React.createElement(myComponent, {tableHeader: tableHeader, headerTitle: shopTitle, productList:
+          productsArray}),
         document.getElementById('container')
       );
 
