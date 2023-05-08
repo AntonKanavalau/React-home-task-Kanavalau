@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Filter</title>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+
+    <script src="app.js"></script>
+
+    <script>
+      var wordList = [
+        {code: 1, word: 'california'},
+        {code: 2, word: 'everything'},
+        {code: 3, word: 'aboveboard'},
+        {code: 4, word: 'washington'},
+        {code: 5, word: 'basketball'},
+        {code: 6, word: 'weathering'},
+        {code: 7, word: 'characters'},
+        {code: 8, word: 'literature'},
+        {code: 9, word: 'contraband'},
+        {code: 10, word: 'appreciate'}
+      ];
+
+
+      ReactDOM.render(
+        React.createElement(myComponent, {wordList: wordList}),
+        document.getElementById('container')
+      );
+    </script>
+  </body>
+</html>
