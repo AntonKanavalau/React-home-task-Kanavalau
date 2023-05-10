@@ -1,39 +1,41 @@
 import React from "react";
+import PropTypes from 'prop-types';
+import DOM from 'react-dom-factories';
 
-const itemComponent = React.createClass({
+class itemComponent extends React.Component {
 
-  displayName: 'itemComponent',
+  static propTypes = {
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    URL: PropTypes.string.isRequired,
+    count: PropTypes.number.isRequired,
+  };
 
-  propTypes: {
-        title: React.PropTypes.string.isRequired,
-        price: React.PropTypes.number.isRequired,
-        URL: React.PropTypes.string.isRequired,
-        count: React.PropTypes.number.isRequired,
-  },
-
-  select(){
+  select = () => {
     this.props.cbSelect(this.props.code);
-  },
+  };
 
-  delete(eo){
+  delete = (eo) => {
     eo.stopPropagation();
     this.props.cbDelete(this.props.code);
-  },
+  };
 
-  render: function () {
-    return ( //интересный момент, нужно взять все в скобки иначе выдает ошибку, что он не понимает, что возвращать
-      React.DOM.tr({className: 'Row',
-                    style: {backgroundColor: this.props.selectCode === this.props.code ? '#F9C941' : 'white'},
-                    onClick: this.select},
-        React.DOM.td({className: 'Title'}, this.props.title),
-        React.DOM.td({className: 'Price'}, this.props.price + 'р.'),
-        React.DOM.td({className: 'IMG'}, React.DOM.img({src: this.props.URL, alt: 'Product image'})),
-        React.DOM.td({className: 'Count'}, this.props.count + 'шт.'),
-        React.DOM.td(null, React.DOM.input({type: 'button', value: 'delete', onClick: this.delete}))
-      )
+  render() {
+    return (
+    DOM.tr({
+        className: 'Row',
+        style: {backgroundColor: this.props.selectCode === this.props.code ? '#F9C941' : 'white'},
+        onClick: this.select
+      },
+      DOM.td({className: 'Title'}, this.props.title),
+      DOM.td({className: 'Price'}, this.props.price + 'р.'),
+      DOM.td({className: 'IMG'}, DOM.img({src: this.props.URL, alt: 'Product image'})),
+      DOM.td({className: 'Count'}, this.props.count + 'шт.'),
+      DOM.td(null, DOM.input({type: 'button', value: 'delete', onClick: this.delete}))
     )
-  },
+  )
+  };
 
-});
+}
 
 export default itemComponent;

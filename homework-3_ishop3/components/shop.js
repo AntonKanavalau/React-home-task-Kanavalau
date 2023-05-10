@@ -1,46 +1,45 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
+import DOM from 'react-dom-factories';
 
 import itemComponent from './item';
 
-const shopComponent = React.createClass({
+class shopComponent extends React.Component {
 
-  displayName: 'shopComponent',
-
-  propTypes: {
-    headerTitle: React.PropTypes.string.isRequired,
-    productList: React.PropTypes.arrayOf(
-      React.PropTypes.shape({
-        title: React.PropTypes.string.isRequired,
-        price: React.PropTypes.number.isRequired,
-        URL: React.PropTypes.string.isRequired,
-        count: React.PropTypes.number.isRequired,
-        code: React.PropTypes.number.isRequired,
+  static propTypes = {
+    headerTitle: PropTypes.string.isRequired,
+    productList: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        URL: PropTypes.string.isRequired,
+        count: PropTypes.number.isRequired,
+        code: PropTypes.number.isRequired,
       })
     ),
-    tableHeader: React.PropTypes.array.isRequired,
-  },
+    tableHeader: PropTypes.array,
+  };
 
-  getInitialState: function () {
-    return {
-      selectCode: null,
-      stateList: [...this.props.productList]
-    }
-  },
+  state = {
+    selectCode: null,
+    stateList: [...this.props.productList]
+  };
 
-  select(code) {
+  select = (code) => {
     this.setState({selectCode: code});
-  },
+  };
 
-  delete(code){
-    this.setState({stateList: this.state.stateList.filter(item=>item.code !== code)});
-  },
+  delete = (code) => {
+    this.setState({stateList: this.state.stateList.filter(item => item.code !== code)});
+  };
 
-  render: function () {
-    var tableHeader = this.props.tableHeader.map(char =>
-      React.DOM.th({key: char.code, className: 'headTitle'}, char.title),
+  render() {
+
+    let tableHeader = this.props.tableHeader.map(char =>
+      DOM.th({key: char.code, className: 'headTitle'}, char.title),
     );
 
-    var productList = this.state.stateList.map(char =>
+    let productList = this.state.stateList.map(char =>
       React.createElement(itemComponent, {
         key: char.code,
         code: char.code,
@@ -54,13 +53,16 @@ const shopComponent = React.createClass({
       })
     );
 
-    return React.DOM.div(null,
-      React.DOM.h1({className: 'headerTitle'}, this.props.headerTitle),
-      React.DOM.table({className: 'itemComponent'},
-        React.DOM.thead(null, React.DOM.tr({className: 'header'}, tableHeader)),
-        React.DOM.tbody({className: 'tableBody'}, productList))
-    );
+    return (
+      DOM.div(null,
+        DOM.h1({className: 'headerTitle'}, this.props.headerTitle),
+        DOM.table({className: 'itemComponent'},
+          DOM.thead(null, React.DOM.tr({className: 'header'}, tableHeader)),
+          DOM.tbody({className: 'tableBody'}, productList))
+      )
+    )
+
   }
-});
+}
 
 export default shopComponent;
