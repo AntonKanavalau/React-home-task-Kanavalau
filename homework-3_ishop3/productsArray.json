@@ -1,5 +1,5 @@
 [
-    {title: 'HONOR X9a 6GB/128GB (изумрудный зеленый)', price: 850.00, URL: 'img/mobile.jpeg', count: 245, code: 1},
-    {title: 'Xiaomi Mi TV A2 43" (международная версия)', price: 1099.88, URL: 'img/TV.jpeg', count: 149, code: 2},
-    {title: 'Canyon CND-SGHS8A', price: 65.12, URL: 'img/headphones.jpeg', count: 470, code: 3}
+    {"title": "HONOR X9a 6GB/128GB (изумрудный зеленый)", "price": 850.00, "URL": "img/mobile.jpeg", "count": 245, "code": 1},
+    {"title": "Xiaomi Mi TV A2 43 (международная версия)", "price": 1099.88, "URL": "img/TV.jpeg", "count": 149, "code": 2},
+    {"title": "Canyon CND-SGHS8A", "price": 65.12, "URL": "img/headphones.jpeg", "count": 470, "code": 3}
 ]

@@ -1,4 +1,6 @@
-var itemComponent = React.createClass({
+import React from "react";
+
+const itemComponent = React.createClass({
 
   displayName: 'itemComponent',
 
@@ -33,3 +35,5 @@ var itemComponent = React.createClass({
   },
 
 });
+
+export default itemComponent;

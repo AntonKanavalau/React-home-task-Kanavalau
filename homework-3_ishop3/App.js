@@ -1,5 +1,3 @@
-'use strict'
-
 /*все для реакта*/
 import React from 'react';
 import ReactDOM from 'react-dom';

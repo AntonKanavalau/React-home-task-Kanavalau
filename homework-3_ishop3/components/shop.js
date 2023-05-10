@@ -2,7 +2,7 @@ import React from "react";
 
 import itemComponent from './item';
 
-var shopComponent = React.createClass({
+const shopComponent = React.createClass({
 
   displayName: 'shopComponent',
 
@@ -61,5 +61,6 @@ var shopComponent = React.createClass({
         React.DOM.tbody({className: 'tableBody'}, productList))
     );
   }
+});
 
-})
+export default shopComponent;
