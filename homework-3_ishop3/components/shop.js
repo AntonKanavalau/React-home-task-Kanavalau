@@ -57,7 +57,7 @@ class shopComponent extends React.Component {
       DOM.div(null,
         DOM.h1({className: 'headerTitle'}, this.props.headerTitle),
         DOM.table({className: 'itemComponent'},
-          DOM.thead(null, React.DOM.tr({className: 'header'}, tableHeader)),
+          DOM.thead(null, DOM.tr({className: 'header'}, tableHeader)),
           DOM.tbody({className: 'tableBody'}, productList))
       )
     )
