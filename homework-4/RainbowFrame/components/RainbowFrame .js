@@ -1,13 +1,11 @@
 import React from 'react';
 
 const RainbowFrame = ({colorList, children }) => {
-  let currentContent = null;
+  let currentContent = children;
 
-  colorList.map((color, index) => {
-    const content = colorList[index - 1] ? currentContent : children;
-    console.log(currentContent);
+  colorList.forEach((color, index) => {
+    const content = colorList[index] ? currentContent : children;
     return currentContent = <div key={color.code} style={{ border: `5px solid ${color.color}`, padding: '10px' }}>{content}</div>
-
   })
 
   return currentContent;
