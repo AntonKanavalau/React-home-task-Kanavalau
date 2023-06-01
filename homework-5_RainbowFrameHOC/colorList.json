@@ -1,0 +1,9 @@
+[
+    {"color":"red", "code":1},
+    {"color":"orange", "code":2},
+    {"color":"yellow", "code":3},
+    {"color":"green", "code":4},
+    {"color":"#00BFFF", "code":5},
+    {"color":"blue", "code":6},
+    {"color":"purple", "code":7}
+]

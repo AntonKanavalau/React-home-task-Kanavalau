@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Через класс
 class RainbowFrame extends React.Component{
   render() {
     let currentContent = this.props.children;
@@ -12,7 +13,8 @@ class RainbowFrame extends React.Component{
   }
 }
 
-/*const RainbowFrame = ({colorList, children }) => {
+//Через функию
+/*const HOFRainbowFrame = ({colorList, children }) => {
   let currentContent = children;
 
   colorList.forEach((color, index) => {
