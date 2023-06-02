@@ -1,9 +1,10 @@
 import React from 'react';
 
 import DoubleButton from './DoubleButton'
+import colorList from '../colorList.json';
 
 import { withRainbowFrame } from './HOFRainbowFrame ';
-let DoubleButtonWithBorder = withRainbowFrame(DoubleButton);
+let DoubleButtonWithBorder = withRainbowFrame(colorList)(DoubleButton);
 
 class VotesBlock extends React.Component {
   render(){
